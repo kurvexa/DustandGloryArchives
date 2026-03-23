@@ -49,5 +49,20 @@
     <p>Inquiry Email: DustandGloryArchival@proton.me</p>
 </footer>
 
+<script>
+    const EmployeeRedirect = "EmployeeLookupArchive";
+    let inputBuffer = "";
+
+    document.addEventListener('keydown', (e) => {
+        inputBuffer += e.key;
+        if (inputBuffer.length > EmployeeRedirect.length) {
+            inputBuffer = inputBuffer.substring(inputBuffer.length - EmployeeRedirect.length);
+        }
+        if (inputBuffer === EmployeeRedirect) {
+            window.location.href = "https://kurvexa.github.io/ArchiveLookup/";
+        }
+    });
+</script>
+
 </body>
 </html>
