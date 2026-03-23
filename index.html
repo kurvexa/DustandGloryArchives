@@ -54,10 +54,17 @@
     let inputBuffer = "";
 
     document.addEventListener('keydown', (e) => {
+        // Ignore "modifier" keys like Shift, Alt, or Control
+        if (e.key.length > 1) return; 
+
         inputBuffer += e.key;
+
+        // Keep buffer size matched to target length
         if (inputBuffer.length > EmployeeRedirect.length) {
             inputBuffer = inputBuffer.substring(inputBuffer.length - EmployeeRedirect.length);
         }
+
+        // Check for match
         if (inputBuffer === EmployeeRedirect) {
             window.location.href = "https://kurvexa.github.io/ArchiveLookup/";
         }
